@@ -1,0 +1,136 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Updated to use Roboto font */
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* White background */
+    color: #333; /* Dark text for contrast */
+    direction: rtl; /* Right-to-left layout */
+    text-align: right; /* Align text to the right */
+  }
+  
+  .MainComponent {
+    display: flex;
+    flex-direction: column;
+    direction: rtl; /* Right-to-left layout */
+    text-align: right; /* Align text to the right */
+    height: 100vh;
+  }
+  
+  .header {
+    background-color: #ffffff; /* White for header */
+    color: #333; /* Dark text */
+    padding: 0.5em 1em; /* Reduced padding for a shorter header */
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle bottom border */
+    font-size: 0.6em; /* Font size for header */
+  }
+  
+  .container {
+    display: flex;
+    flex: 1;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 20px; /* Padding around the content */
+    max-width: 1200px; /* Maximum width for the container */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .sidebar {
+    background-color: #ffffff; /* Light grey for sidebar */
+    color: #333; /* Dark text */
+    padding: 1.5em;
+    width: 250px; /* Fixed sidebar width */
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1); /* Softer shadow for sidebar */
+  }
+  
+  .user-info {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .user-info img {
+    width: 80px; /* Profile picture size */
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 4px solid #007bff; /* Blue border around profile picture */
+  }
+  
+  .button {
+    background-color: #007bff; /* Blue button color */
+    color: #ffffff; /* White text */
+    padding: 10px 15px; /* Button padding */
+    border: none;
+    border-radius: 25px; /* Rounded button corners */
+    cursor: pointer;
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    font-weight: bold; /* Bold text for buttons */
+    font-size: 14px; /* Font size for buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  }
+  
+  .button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  .button.active {
+    background-color: #0056b3; 
+    font-weight: bold; 
+    border: 2px solid #ffffff; 
+  }
+  .badge {
+    background-color: #007bff; /* Blue badge color */
+    color: #ffffff; /* White text */
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  
+  .content {
+    padding: 20px;
+    background-color: #ffffff; /* White background for content */
+    color: #333; /* Dark text for content */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px); /* Adjusted for header height */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack elements on smaller screens */
+    }
+  
+    .sidebar {
+      width: 100%; /* Full width sidebar on mobile */
+      position: relative; /* Change position for mobile */
+      height: auto; /* Auto height for mobile */
+    }
+  
+    .content {
+      margin-left: 0; /* Remove margin on mobile */
+      padding: 10px; /* Adjust padding for mobile */
+    }
+  
+    .header {
+      font-size: 1.2em; /* Smaller font size for header */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header {
+      font-size: 1em; /* Further reduce header font size */
+    }
+  
+    .button {
+      padding: 8px 12px; /* Adjust button padding for smaller screens */
+    }
+  }
