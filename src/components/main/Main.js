@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import './Main.css';
+import Incoming from '../incoming/Incoming';
+import Outgoing from '../outgoing/Outgoing';
+import Archives from '../archives/Archives';
+import OutgoingBook from '../outgoingBook/OutgoingBook';
+
 
 function Main() {
-  const [userData, setUser ] = useState({
-    name: 'الاء', // الاسم باللغة العربية
+  const [userData] = useState({
+    name: 'الاء',
     picture: '/img/usericon.png',
-  });
-
-  const [reportCounts, setReportCounts] = useState({
-    incoming: 10,
-    sent: 20,
-    archived: 30,
   });
 
   const [activeContent, setActiveContent] = useState('incoming');
@@ -20,39 +19,46 @@ function Main() {
   };
 
   return (
-    <div className="MainComponent" style={{ direction: 'rtl', textAlign: 'right' }}>
+    <div className="MainComponent">
       <header className="header">
-        <h1>الوارد والصادر</h1> {/* العربية لـ "Incoming and Outgoing" */}
+        <h1>نظام الوارد والصادر</h1>
       </header>
-      <div className="container">
+      <div className="Main-container">
         <aside className="sidebar">
           <div className="user-info">
-            <img src={userData.picture} alt="User  " />
+            <img src="img\usericon.png" alt="User" className="img-fluid rounded-circle" />
             <h2>{userData.name}</h2>
           </div>
           <button
             className={`button ${activeContent === 'incoming' ? 'active' : ''}`}
             onClick={() => handleButtonClick('incoming')}
           >
-            الوارد <span className="badge">{reportCounts.incoming}</span>
+            <img src="img\inbox.png" alt="Incoming" className="button-icon" /> الوارد
           </button>
           <button
             className={`button ${activeContent === 'sent' ? 'active' : ''}`}
             onClick={() => handleButtonClick('sent')}
           >
-            الصادر <span className="badge">{reportCounts.sent}</span>
+            <img src="img\inbox (1).png" alt="Sent" className="button-icon" /> الصادر
           </button>
           <button
             className={`button ${activeContent === 'archived' ? 'active' : ''}`}
             onClick={() => handleButtonClick('archived')}
           >
-            الأرشيف <span className="badge">{reportCounts.archived}</span>
+            <img src="img\inbox (2).png" alt="Archived" className="button-icon" /> الأرشيف
+          </button>
+          <button
+            className={`button ${activeContent === 'addOutgoing' ? 'active' : ''}`}
+            onClick={() => handleButtonClick('addOutgoing')}
+          >
+            <img src="img\add-post.png" alt="Add Outgoing" className="button-icon" /> إضافة كتاب صادر
           </button>
         </aside>
-        <main className="content">
-          {activeContent === 'incoming' && <h2>التقارير الواردة</h2>}
-          {activeContent === 'sent' && <h2>التقارير الصادرة</h2>}
-          {activeContent === 'archived' && <h2>التقارير المؤرشفة</h2>}
+        <main className="Main-content">
+          {activeContent === 'incoming' && <Incoming className="pages"/>}
+          {activeContent === 'sent' && <Outgoing className="pages"/>}
+          {activeContent === 'archived' && <Archives className="pages"/>}
+          {activeContent === 'addOutgoing' && <OutgoingBook className="pages"/>}
         </main>
       </div>
     </div>

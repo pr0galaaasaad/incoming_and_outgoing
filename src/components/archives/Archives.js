@@ -132,11 +132,12 @@ function Incoming() {
               <td>{item.subject}</td>
               <td >{item.notes}</td>
               <td>{item.date}</td>
-              <td><a href={item.file} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>View</a></td>
+              <td><a href={item.file} target="_blank" rel="noopener noreferrer">Download</a></td>
             </tr>
           ))}
         </tbody>
       </table>
+
       <div className="pagination">
         <button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>Previous</button>
         <span>Page {page} of {Math.ceil(totalCount / 10)}</span>

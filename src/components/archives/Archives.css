@@ -1,9 +1,9 @@
-/* Outgoing.css */
-
-  .Outgoing-container {
+/* Archives.css */
+  .Archives-container {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
     max-width: 800px;
     margin: auto;
   }
@@ -12,7 +12,7 @@
     color: #333;
     font-size: 24px;
     text-align: right; /* Align text to the right */
-    margin-bottom: 20px;
+    margin-top: 0;
   }
   
   .search-bar {
@@ -24,7 +24,7 @@
     font-size: 16px;
   }
   
-  .Outgoing-table {
+  .Archives-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
